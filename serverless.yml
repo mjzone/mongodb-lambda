@@ -1,0 +1,13 @@
+service: lambda-mongodb
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  getData:
+    handler: handler.getData
+    events:
+      - http:
+          path: data
+          method: get
